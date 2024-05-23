@@ -1,4 +1,4 @@
-FROM alpine:3.19.1
+FROM alpine:3.20.0
 
 RUN addgroup -g 65532 tasksyncer && \
     adduser -D -u 65532 -G tasksyncer tasksyncer
