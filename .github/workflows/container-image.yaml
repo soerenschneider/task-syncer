@@ -31,7 +31,7 @@ jobs:
 
       - name: Upsert git tag
         run: |
-          TAG="v${{ env.VERSION }}"
+          TAG="${{ env.VERSION }}"
           # Check if tag already exists
           if git rev-parse "$TAG" >/dev/null 2>&1; then
             echo "Tag $TAG already exists. Skipping creation."
