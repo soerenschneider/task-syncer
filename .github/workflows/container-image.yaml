@@ -49,9 +49,8 @@ jobs:
         with:
           images: ${{ env.GH_REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=raw,value={{ branch}}-{{date 'YYYYMMDDHHmmss'}}
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+            type=raw,value=${{ env.VERSION }}
+            type=ref,event=branch
 
       - name: Build and push container image
         uses: docker/build-push-action@v5.3.0
